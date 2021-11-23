@@ -2,6 +2,8 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+//Linq dökümantasyonu
+//https://docs.microsoft.com/tr-tr/dotnet/csharp/linq/linq-in-csharp
 
 namespace HttpWebapi.AddControllers
 {
@@ -59,7 +61,7 @@ namespace HttpWebapi.AddControllers
         [HttpGet]
         public List<User> getUsers()
         {
-            var userList = UserList.OrderBy(x => x.Id).ToList<User>();
+            var userList = UserList.OrderBy(x => x.Id).ToList<User>();//linq
             return userList;
         }
 
@@ -69,6 +71,48 @@ namespace HttpWebapi.AddControllers
             var user = UserList.Where(user => user.Id == id).SingleOrDefault();
             return user;
         }
+
+        [HttpPost]
+        public IActionResult AddUser([FromBody] User newUser)
+        {
+            var user = UserList.SingleOrDefault(x => x.Email == newUser.Email);
+            if (user is not null)
+            {
+                return BadRequest();
+            }
+            UserList.Add(newUser);
+            return Ok();
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateUser(int id, [FromBody] User updatedUser)
+        {
+            var user = UserList.SingleOrDefault(x => x.Id == id);
+            if (user is null)
+            {
+                return BadRequest();
+            }
+            user.Name = updatedUser.Name != default ? updatedUser.Name : user.Name;
+            user.Surname = updatedUser.Surname != default ? updatedUser.Surname : user.Surname;
+            user.Email = updatedUser.Email != default ? updatedUser.Email : user.Email;
+            user.PhoneNumber = updatedUser.PhoneNumber != default ? updatedUser.PhoneNumber : user.PhoneNumber;
+
+            return Ok();
+        }
+
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteUser(int id)
+        {
+            var user = UserList.SingleOrDefault(x => x.Id == id);
+            if (user is null)
+            {
+                return BadRequest();
+            }
+            UserList.Remove(user);
+            return Ok();
+        }
+
 
     }
 }

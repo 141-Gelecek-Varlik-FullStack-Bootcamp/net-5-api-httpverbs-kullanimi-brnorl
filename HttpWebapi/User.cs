@@ -1,5 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+//DataAnnotations dökümantasyon
+//https://docs.microsoft.com/tr-tr/dotnet/api/system.componentmodel.dataannotations?view=net-5.0
 
 namespace HttpWebapi
 {
@@ -20,7 +22,7 @@ namespace HttpWebapi
 
         [Required(ErrorMessage = "E-Mail is required"), MinLength(11)]
         [Display(Name = "User Email")]
-        [RegularExpression(@"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,4}", ErrorMessage = "Not a valid E-Mail")]
+        [RegularExpression(@"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,4}", ErrorMessage = "Not a valid E-Mail")]//regex expression
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Phone Number is required"), MinLength(11)]
