@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Desktop\\bootcamp1\\HttpWebapi\\HttpWebapi.csproj": {}
+    "C:\\Users\\user\\Desktop\\bootcamp1\\HttpWebApi\\HttpWebapi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Desktop\\bootcamp1\\HttpWebapi\\HttpWebapi.csproj": {
+    "C:\\Users\\user\\Desktop\\bootcamp1\\HttpWebApi\\HttpWebapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\bootcamp1\\HttpWebapi\\HttpWebapi.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\bootcamp1\\HttpWebApi\\HttpWebapi.csproj",
         "projectName": "HttpWebapi",
-        "projectPath": "C:\\Users\\user\\Desktop\\bootcamp1\\HttpWebapi\\HttpWebapi.csproj",
+        "projectPath": "C:\\Users\\user\\Desktop\\bootcamp1\\HttpWebApi\\HttpWebapi.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\bootcamp1\\HttpWebapi\\obj\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\bootcamp1\\HttpWebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
